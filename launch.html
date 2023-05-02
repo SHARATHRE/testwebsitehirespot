@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>launch</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      p {
+        font-family: "Roboto";
+        font-style: normal;
+        text-align: center;
+        background: linear-gradient(
+          90.81deg,
+          #221f51 7.13%,
+          rgba(109, 49, 251, 0.72) 43.14%,
+          rgba(236, 107, 242, 0.68) 72.48%,
+          #f9a89e 99.27%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        /* text-fill-color: transparent; */
+      }
+
+      body {
+        background-image: url("images/desktop.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: "Roboto";
+      }
+
+      button {
+        position: absolute;
+        background: #221f51;
+        border: 2px solid #221f51;
+        font-family: "Roboto";
+        font-style: normal;
+        color: #ffffff;
+      }
+
+      input {
+        border: 2px solid #000000;
+        font-family: "Roboto";
+        font-style: normal;
+        color: #000000;
+      }
+
+      a.nav-link {
+        color: black;
+        font-weight: 600;
+        font-size: large;
+      }
+
+      .navbar-collapse.collapse {
+        justify-content: end;
+      }
+
+      /* For Mobile devices: 320px-480px */
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        p {
+          font-weight: 800;
+          font-size: 34px;
+          line-height: 36px;
+          letter-spacing: 0.16em;
+        }
+
+        button {
+          position: absolute;
+          width: 87px;
+          height: 27px;
+          left: calc(50% - 30px / 2 + 42.5px);
+          top: 96px;
+          border-radius: 56px;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 15px;
+        }
+
+        input {
+          position: absolute;
+          width: 241px;
+          padding-left: 12px;
+          height: 35px;
+          left: calc(50% - 244px / 2);
+          top: 92px;
+          border-radius: 56px;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 19px;
+        }
+
+        body {
+          height: 100vh;
+        }
+
+        .navbar-toggler {
+          position: relative;
+          left: 3px;
+          height: 36px;
+          top: -3px;
+          width: 58px;
+        }
+
+        .row {
+          position: relative;
+          top: 147px;
+        }
+      }
+
+      /* For Tablets or iPad: 480px - 768px */
+      @media only screen and (min-width: 480px) and (max-width: 768px) {
+        p {
+          /* font-weight: 800; */
+          /* font-size: 115px; */
+          /* line-height: 140px; */
+          /* letter-spacing: 0.18em; */
+          /* text-fill-color: transparent; */
+        }
+
+        button {
+          /* width: 223px; */
+          /* height: 67px; */
+          /* left: calc(50% - 223px/2 + 370.5px); */
+          /* top: 646px; */
+          /* border-radius: 56px; */
+          /* font-weight: 500; */
+          /* font-size: 24px; */
+          /* line-height: 28px; */
+        }
+
+        input {
+          /* position: absolute; */
+          /* width: 980px; */
+          /* padding-left: 20px; */
+          /* height: 83px; */
+          /* left: calc(50% - 980px/2); */
+          /* top: 638px;  */
+          /* border-radius: 56px; */
+          /* font-weight: 500; */
+          /* font-size: 24px; */
+          /* line-height: 28px; */
+        }
+      }
+
+      /* For Laptop or small-size screen: 768px -1024px */
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        p {
+          font-weight: 800;
+          font-size: 84px;
+          line-height: 87px;
+          letter-spacing: 0.11em;
+          position: relative;
+          top: 88px;
+        }
+
+        button {
+          position: absolute;
+          width: 164px;
+          height: 39px;
+          left: calc(50% - 446px / 2 + 323.5px);
+          top: 353px;
+          border-radius: 56px;
+          font-weight: 500;
+          font-size: 21px;
+          line-height: 28px;
+        }
+
+        input {
+          position: absolute;
+          width: 553px;
+          padding-left: 20px;
+          height: 49px;
+          left: calc(50% - 566px / 2);
+          top: 348px;
+          border-radius: 56px;
+          font-weight: 500;
+          font-size: 21px;
+          line-height: 25px;
+        }
+
+        button.navbar-toggler {
+          position: initial;
+          width: 8%;
+        }
+
+        .navbar {
+          padding: 12px;
+        }
+      }
+
+      /* For Desktop or large-size screen: 1024px -1200px */
+      @media only screen and (min-width: 1024px) and (max-width: 1200px) {
+        p {
+          font-weight: 800;
+          font-size: 90px;
+          line-height: 100px;
+          letter-spacing: 0.16em;
+          position: relative;
+          top: 53px;
+        }
+
+        button {
+          position: absolute;
+          width: 145px;
+          height: 40px;
+          left: calc(50% - 223px / 2 + 272.5px);
+          top: 345px;
+          border-radius: 56px;
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 28px;
+        }
+
+        input {
+          position: absolute;
+          width: 638px;
+          padding-left: 20px;
+          height: 51px;
+          left: calc(50% - 652px / 2);
+          top: 340px;
+          border-radius: 56px;
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 24px;
+        }
+        .navbar-toggler {
+          display: none;
+        }
+      }
+
+      /* For Extra-large size device: 1200px and more */
+      @media only screen and (min-width: 1200px) {
+        p {
+          font-weight: 800;
+          font-size: 115px;
+          line-height: 140px;
+          letter-spacing: 0.18em;
+          position: relative;
+          top: 62px;
+        }
+
+        button {
+          position: absolute;
+          width: 223px;
+          height: 67px;
+          left: calc(50% - 223px / 2 + 370.5px);
+          top: 440px;
+          border-radius: 56px;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 28px;
+        }
+
+        input {
+          position: absolute;
+          width: 980px;
+          padding-left: 20px;
+          height: 83px;
+          left: calc(50% - 980px / 2);
+          top: 432px;
+          border-radius: 56px;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 28px;
+        }
+
+        .navbar {
+          padding: 14px 41px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a href="/"
+          ><img src="images/logo.png" alt="Hirespot logo" width="150px"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav d-flex justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="launch.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about_update.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact_us.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- </section> -->
+
+    <main>
+      <section>
+        <div class="container">
+          <div class="row">
+            <p style="margin-top: 9%">LAUNCHING SOON!</p>
+            <!-- <div class="input">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Id"
+                id="email"
+              />
+              <span>
+                <button>Notify me</button>
+              </span>
+            </div> -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
